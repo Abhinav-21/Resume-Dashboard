@@ -47,7 +47,7 @@ export const resumeData = {
   projects: [
     {
       title: 'Multimodal Learning for Hinglish Meme Classification',
-      github: null,
+      github: 'https://github.com/Abhinav-21/Internet-Hinglish-Memes-Classification-using-Multimodal-Learning',
       technologies: [
         'Python',
         'TensorFlow',
@@ -66,7 +66,7 @@ export const resumeData = {
     },
     {
       title: 'Healthcare Record Management System',
-      github: 'https://github.com/Abhinav-21/Healthcare-Record-Management-System',
+      github: 'https://github.com/Abhinav-21/Healthcare-Record-Management',
       technologies: [
         'HTML',
         'CSS',
@@ -86,7 +86,7 @@ export const resumeData = {
     },
     {
       title: 'Handwritten Digit Recognition Model',
-      github: 'https://github.com/Abhinav-21/neural-network-from-scratch',
+      github: 'https://github.com/Abhinav-21/Digit_Classification-Neural_Network',
       technologies: ['Python', 'NumPy', 'Pickle', 'Matplotlib', 'Keras'],
       description:
         'Implemented and trained a fully-connected neural network from scratch to classify handwritten digits (MNIST dataset).',
@@ -109,7 +109,7 @@ export const resumeData = {
     },
     {
       title: 'Document Processing Automation using OCR and RAG',
-      github: 'https://github.com/Abhinav-21/DocAI',
+      github: 'https://github.com/Abhinav-21/Document-Processing-Atomation',
       technologies: ['Python', 'Transformers', 'Tesseract OCR', 'LangChain'],
       description:
         'Developed an AI-powered system to extract, process, and retrieve document information for business automation.',
