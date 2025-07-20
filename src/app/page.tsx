@@ -1,6 +1,5 @@
 import { resumeData } from '@/lib/resume-data';
 import { DashboardHeader } from '@/components/dashboard-header';
-import { PersonalInfoCard } from '@/components/personal-info-card';
 import { EducationCard } from '@/components/education-card';
 import { CareerPathCard } from '@/components/career-path-card';
 import { SkillsCard } from '@/components/skills-card';
@@ -15,15 +14,13 @@ export default function Home() {
       <div className="mx-auto max-w-screen-2xl">
         <DashboardHeader
           name={resumeData.name}
-          title="Chemical Engineering Student"
+          title="Bachelor of Technology, NIT Allahabad"
+          contact={resumeData.contact}
+          socials={resumeData.socials}
         />
         <main className="grid grid-cols-1 gap-6 lg:grid-cols-12">
           <div className="space-y-6 lg:col-span-4 xl:col-span-3">
             <AboutCard summary={resumeData.summary} />
-            <PersonalInfoCard
-              contact={resumeData.contact}
-              socials={resumeData.socials}
-            />
             <EducationCard education={resumeData.education} />
             <CareerPathCard resumeContent={resumeData.fullText} />
           </div>
