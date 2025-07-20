@@ -172,7 +172,6 @@ export const resumeData = {
     'Artificial Intelligence',
   ],
   achievements: [
-    'Received a LOR at BPCL CRDC for performance during the internship.',
     'Got an LOR from Bharat Petroleum CRDC and TPO MNNIT.',
     'Winner of Chemathlon under Rasayan in Avishkar (August, 2024)',
     'Winner of Just in Case under Nirmaan in Avishkar (August, 2024)',
