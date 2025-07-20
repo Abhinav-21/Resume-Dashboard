@@ -1,64 +1,61 @@
 'use server';
 /**
- * @fileOverview Generates potential recruiter questions and answers based on resume content.
+ * @fileOverview Answers a recruiter's question based on resume content.
  *
- * - generateRecruiterQuestions - A function that creates Q&A pairs.
- * - GenerateRecruiterQuestionsInput - The input type for the function.
- * - GenerateRecruiterQuestionsOutput - The return type for the function.
+ * - answerRecruiterQuestion - A function that answers a recruiter's question.
+ * - AnswerRecruiterQuestionInput - The input type for the function.
+ * - AnswerRecruiterQuestionOutput - The return type for the function.
  */
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 
-const QuestionAnswerPairSchema = z.object({
-  question: z.string().describe('A potential question a recruiter might ask.'),
+const AnswerRecruiterQuestionInputSchema = z.object({
+  resumeContent: z
+    .string()
+    .describe('The full content of the resume to analyze.'),
+  question: z.string().describe("The recruiter's question to be answered."),
+});
+export type AnswerRecruiterQuestionInput = z.infer<
+  typeof AnswerRecruiterQuestionInputSchema
+>;
+
+const AnswerRecruiterQuestionOutputSchema = z.object({
   answer: z
     .string()
     .describe('A well-crafted, concise answer to the question.'),
 });
-
-const GenerateRecruiterQuestionsInputSchema = z.object({
-  resumeContent: z
-    .string()
-    .describe('The full content of the resume to analyze.'),
-});
-export type GenerateRecruiterQuestionsInput = z.infer<
-  typeof GenerateRecruiterQuestionsInputSchema
+export type AnswerRecruiterQuestionOutput = z.infer<
+  typeof AnswerRecruiterQuestionOutputSchema
 >;
 
-const GenerateRecruiterQuestionsOutputSchema = z.object({
-  qna: z
-    .array(QuestionAnswerPairSchema)
-    .describe('A list of 3-5 question and answer pairs.'),
-});
-export type GenerateRecruiterQuestionsOutput = z.infer<
-  typeof GenerateRecruiterQuestionsOutputSchema
->;
-
-export async function generateRecruiterQuestions(
-  input: GenerateRecruiterQuestionsInput
-): Promise<GenerateRecruiterQuestionsOutput> {
+export async function answerRecruiterQuestion(
+  input: AnswerRecruiterQuestionInput
+): Promise<AnswerRecruiterQuestionOutput> {
   return recruiterQnaFlow(input);
 }
 
 const prompt = ai.definePrompt({
   name: 'recruiterQnaPrompt',
-  input: {schema: GenerateRecruiterQuestionsInputSchema},
-  output: {schema: GenerateRecruiterQuestionsOutputSchema},
-  prompt: `You are an expert technical recruiter and career coach. Based on the following resume, generate a list of 3-5 insightful questions that a top-tier recruiter would ask this candidate to evaluate their skills, experience, and problem-solving abilities. For each question, provide a strong, concise, and professional answer from the perspective of the candidate.
-
-Focus on questions that dig into the projects, technical skills, and experience listed.
+  input: {schema: AnswerRecruiterQuestionInputSchema},
+  output: {schema: AnswerRecruiterQuestionOutputSchema},
+  prompt: `You are the candidate whose resume is provided below. Your task is to answer the recruiter's question professionally and concisely, drawing only from the information given in the resume. Act as if you are in a real interview.
 
 Resume Content:
 {{{resumeContent}}}
+
+Recruiter's Question:
+"{{{question}}}"
+
+Based on the resume, provide a direct and professional answer to the recruiter's question.
 `,
 });
 
 const recruiterQnaFlow = ai.defineFlow(
   {
     name: 'recruiterQnaFlow',
-    inputSchema: GenerateRecruiterQuestionsInputSchema,
-    outputSchema: GenerateRecruiterQuestionsOutputSchema,
+    inputSchema: AnswerRecruiterQuestionInputSchema,
+    outputSchema: AnswerRecruiterQuestionOutputSchema,
   },
   async input => {
     const {output} = await prompt(input);

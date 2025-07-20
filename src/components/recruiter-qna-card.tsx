@@ -10,19 +10,15 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { MessageSquareQuote } from 'lucide-react';
+import { MessageSquareQuote, Send } from 'lucide-react';
 import {
-  generateRecruiterQuestions,
-  type GenerateRecruiterQuestionsOutput,
+  answerRecruiterQuestion,
+  type AnswerRecruiterQuestionOutput,
 } from '@/ai/flows/recruiter-qna';
 import { Skeleton } from './ui/skeleton';
 import { useToast } from '@/hooks/use-toast';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from './ui/accordion';
+import { Textarea } from './ui/textarea';
+import { Alert, AlertDescription, AlertTitle } from './ui/alert';
 
 type RecruiterQnaCardProps = {
   resumeContent: string;
@@ -30,23 +26,36 @@ type RecruiterQnaCardProps = {
 
 export function RecruiterQnaCard({ resumeContent }: RecruiterQnaCardProps) {
   const [loading, setLoading] = useState(false);
-  const [result, setResult] =
-    useState<GenerateRecruiterQuestionsOutput | null>(null);
+  const [question, setQuestion] = useState('');
+  const [result, setResult] = useState<AnswerRecruiterQuestionOutput | null>(
+    null
+  );
+  const [lastQuestion, setLastQuestion] = useState('');
   const { toast } = useToast();
 
   const handleGenerate = async () => {
-    setLoading(true);
-    setResult(null);
-    try {
-      const res = await generateRecruiterQuestions({ resumeContent });
-      setResult(res);
-    } catch (error) {
-      console.error('Error generating recruiter Q&A:', error);
+    if (!question.trim()) {
       toast({
         variant: 'destructive',
         title: 'Error',
-        description:
-          'Failed to generate recruiter Q&A. Please try again.',
+        description: 'Please enter a question.',
+      });
+      return;
+    }
+
+    setLoading(true);
+    setResult(null);
+    setLastQuestion(question);
+
+    try {
+      const res = await answerRecruiterQuestion({ resumeContent, question });
+      setResult(res);
+    } catch (error) {
+      console.error('Error generating recruiter answer:', error);
+      toast({
+        variant: 'destructive',
+        title: 'Error',
+        description: 'Failed to generate an answer. Please try again.',
       });
     } finally {
       setLoading(false);
@@ -54,36 +63,39 @@ export function RecruiterQnaCard({ resumeContent }: RecruiterQnaCardProps) {
   };
 
   return (
-    <Card className="print-card">
+    <Card className="print-card flex flex-col">
       <CardHeader>
-        <CardTitle className="font-headline text-2xl">
+        <CardTitle className="font-headline text-2xl flex items-center gap-2">
+          <MessageSquareQuote />
           Recruiter Q&A
         </CardTitle>
         <CardDescription>
-          Generate potential interview questions a recruiter might ask.
+          Ask a question as a recruiter, and the AI will answer based on the
+          resume.
         </CardDescription>
       </CardHeader>
-      <CardContent className="min-h-[10rem]">
+      <CardContent className="flex-grow space-y-4">
+        <div className="space-y-2">
+          <Textarea
+            placeholder="e.g., Tell me about your experience with RAG pipelines."
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
+            disabled={loading}
+          />
+        </div>
         {loading && (
-          <div className="space-y-4">
-            <Skeleton className="h-8 w-full" />
-            <Skeleton className="h-8 w-full" />
-            <Skeleton className="h-8 w-full" />
+          <div className="space-y-2">
+            <Skeleton className="h-4 w-1/3" />
+            <Skeleton className="h-10 w-full" />
           </div>
         )}
         {result && (
-          <Accordion type="single" collapsible className="w-full">
-            {result.qna.map((item, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left font-medium text-sm">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-sm text-muted-foreground">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <Alert>
+            <AlertTitle className="font-semibold">{lastQuestion}</AlertTitle>
+            <AlertDescription className="mt-2 text-foreground">
+              {result.answer}
+            </AlertDescription>
+          </Alert>
         )}
       </CardContent>
       <CardFooter className="print-hidden">
@@ -93,11 +105,11 @@ export function RecruiterQnaCard({ resumeContent }: RecruiterQnaCardProps) {
           className="w-full"
         >
           {loading ? (
-            'Generating...'
+            'Answering...'
           ) : (
             <>
-              <MessageSquareQuote className="mr-2 h-4 w-4" />
-              Generate Questions
+              <Send className="mr-2 h-4 w-4" />
+              Ask Question
             </>
           )}
         </Button>
