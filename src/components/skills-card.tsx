@@ -5,6 +5,7 @@ type Skills = {
   languages: string[];
   technologies: string[];
   tools: string[];
+  frameworks: string[];
   cloud: string[];
   softSkills: string[];
 };
@@ -13,18 +14,23 @@ type SkillsCardProps = {
   skills: Skills;
 };
 
-const SkillCategory = ({ title, skills }: { title: string, skills: string[] }) => (
-  <div>
-    <h3 className="mb-2 font-semibold">{title}</h3>
-    <div className="flex flex-wrap gap-2">
-      {skills.map((skill, index) => (
-        <Badge key={index} variant="secondary" className="text-nowrap">
-          {skill}
-        </Badge>
-      ))}
+const SkillCategory = ({ title, skills }: { title: string, skills: string[] }) => {
+  if (!skills || skills.length === 0) return null;
+  
+  return (
+    <div>
+      <h3 className="mb-2 font-semibold">{title}</h3>
+      <div className="flex flex-wrap gap-2">
+        {skills.map((skill, index) => (
+          <Badge key={index} variant="secondary" className="text-nowrap">
+            {skill}
+          </Badge>
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
+
 
 export function SkillsCard({ skills }: SkillsCardProps) {
   return (
@@ -38,6 +44,7 @@ export function SkillsCard({ skills }: SkillsCardProps) {
         <SkillCategory title="Languages" skills={skills.languages} />
         <SkillCategory title="Technologies" skills={skills.technologies} />
         <SkillCategory title="Developer & Analytics Tools" skills={skills.tools} />
+        <SkillCategory title="Frameworks" skills={skills.frameworks} />
         <SkillCategory title="Cloud/Big Data" skills={skills.cloud} />
         <SkillCategory title="Soft Skills" skills={skills.softSkills} />
       </CardContent>

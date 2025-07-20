@@ -7,6 +7,7 @@ import { ExperienceCard } from '@/components/experience-card';
 import { ProjectsCard } from '@/components/projects-card';
 import { AchievementsCard } from '@/components/achievements-card';
 import { AboutCard } from '@/components/about-card';
+import { RecruiterQnaCard } from '@/components/recruiter-qna-card';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
             <AboutCard summary={resumeData.summary} />
             <EducationCard education={resumeData.education} />
             <CareerPathCard resumeContent={resumeData.fullText} />
+            <RecruiterQnaCard resumeContent={resumeData.fullText} />
           </div>
           <div className="space-y-6 lg:col-span-8 xl:col-span-9">
             <ExperienceCard experience={resumeData.experience} />

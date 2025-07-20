@@ -186,6 +186,7 @@ export const resumeData = {
   ],
   fullText: `Abhinav Tiwari
 +91-7054425113 | abhiitiwarii0@gmail.com | Abhinav-21 | abhinav-tiwari-mnnit
+A highly motivated Chemical Engineering student from MNNIT Allahabad with a strong passion for Data Science, Machine Learning, and Software Development. Possesses hands-on experience in building AI-driven solutions, including RAG pipelines and OCR models, and is proficient in Python, SQL, and various data analytics tools. A proven problem-solver with strong communication and collaboration skills, seeking to leverage technical expertise in a challenging role.
 Education:
 - Motilal Nehru National Institute of Technology Allahabad, B.Tech Chemical Engineering (2021-2025), CPI: 8.04
 - S.K.D. Academy, Intermediate (2020-2021), 95.6%
@@ -193,7 +194,7 @@ Education:
 Experience:
 - Shorthills AI, SDE Intern (March 2025-Present): Gained hands-on experience in SQL, Python, Advanced Excel for data handling and Generative AI. Developed RAG pipelines and custom OCR models. Performed testing, fixed bugs, and analyzed databases with DBeaver.
 Projects:
-- Multimodal Learning for Hinglish Meme Classification: Sentiment analyzer using Memotion 3.0 dataset. Combined DistilBERT-Multilingual and VGG16. Achieved 78.82% F1-score.
+- Multimodal Learning for Hinglish Meme Classification: Sentiment analyzer using the Memotion 3.0 dataset. Combined DistilBERT-Multilingual and VGG16. Achieved 78.82% F1-score.
 - Healthcare Record Management System: Web system with secure document storage (Web3.storage) and health data analytics using MERN stack and Python.
 - Handwritten Digit Recognition Model: Neural network from scratch in Python, NumPy. Achieved 93% accuracy on MNIST. Implemented ReLU, Softmax, and backpropagation.
 - Financial Insights Dashboard: Semi-automated financial tracker using MS Excel and Power BI for visual analytics.
