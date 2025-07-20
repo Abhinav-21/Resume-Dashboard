@@ -94,13 +94,34 @@ export const resumeData = {
         'Achieved 93% accuracy through gradient descent and weight optimization.',
       ],
     },
+    {
+      title: 'Financial Insights Dashboard',
+      github: null,
+      technologies: ['MS Excel', 'Power BI', 'Pivot Tables', 'Data Validation'],
+      description: 'Built a semi-automated financial tracker with visual analytics for expense management and reporting.',
+      points: [
+        'Automated income/expense tracking with category tagging, month-end carry-forward, and data validation.',
+        'Created Pivot Tables, Pie Charts, and Power BI dashboards to visualize financial trends.',
+        'Applied dynamic formatting and summaries to highlight spending patterns and financial health.'
+      ]
+    },
+    {
+      title: 'Document Processing Automation using OCR and RAG',
+      github: 'https://github.com/Abhinav-21/DocAI',
+      technologies: ['Python', 'Transformers', 'Tesseract OCR', 'LangChain'],
+      description: 'Developed an AI-powered system to extract, process, and retrieve document information for business automation.',
+      points: [
+        'Automated document data extraction and intelligent retrieval using OCR with Retrieval-Augmented Generation (RAG).',
+        'Reduced manual document review effort, enabling faster access to key information.'
+      ]
+    }
   ],
   skills: {
-    languages: ['Python', 'SQL', 'C++', 'C'],
-    technologies: ['Data Warehousing', 'ETL Pipelines', 'Transformer Models', 'LLMs', 'RAG', 'ExpressJS'],
+    languages: ['Python (LinkedIn Certified Top 5%)', 'SQL', 'C++', 'C'],
+    technologies: ['Data Warehousing', 'ETL Pipelines', 'Transformer Models', 'LLMs', 'Generative AI', 'RAG', 'ExpressJS'],
     tools: ['VSCode', 'Power BI', 'MS Excel', 'Jupyter Notebook', 'Spyder', 'MySQL', 'Git', 'pip', 'npm'],
     cloud: ['AWS (Basics)', 'Apache Spark (Basics)'],
-    softSkills: ['Communication', 'Time-Management', 'Problem-Solving', 'Collaboration', 'Creativity', 'Adaptability', 'Empathy'],
+    softSkills: ['Communication', 'Time-Management', 'Problem-Solving', 'Collaboration', 'Creativity', 'Adaptability', 'Empathy', 'Critical Thinking', 'Data-driven Decision Making', 'Troubleshooting'],
   },
   interests: [
     'Data Science and Analytics',
@@ -114,9 +135,12 @@ export const resumeData = {
   ],
   achievements: [
     'Received a LOR at BPCL CRDC for performance during the internship.',
+    'Got an LOR from Bharat Petroleum CRDC and TPO MNNIT.',
     'Winner of Chemathlon under Rasayan in Avishkar (August, 2024)',
+    'Winner of Just in Case under Nirmaan in Avishkar (August, 2024)',
     'Winner (team) of Gnosis India Quiz (March, 2024)',
     '2-year consecutive gold medal winner in Annual Athletics Meet in Shot-put (August, 2022)',
+    'Winner Chemathlon under Rasayan (Mock Placement Drive) (August, 2022)',
   ],
   positions: [
     'Training and Placement Representative of the batch 2025',
@@ -134,14 +158,16 @@ export const resumeData = {
     Projects:
     - Multimodal Learning for Hinglish Meme Classification: Sentiment analyzer using Memotion 3.0 dataset. Combined DistilBERT-Multilingual and VGG16. Achieved 78.82% F1-score.
     - Healthcare Record Management System: Web system with secure document storage (Web3.storage) and health data analytics using MERN stack and Python.
-    - Handwritten Digit Recognition: Neural network from scratch in Python, NumPy. Achieved 93% accuracy on MNIST.
+    - Handwritten Digit Recognition Model: Neural network from scratch in Python, NumPy. Achieved 93% accuracy on MNIST.
+    - Financial Insights Dashboard: Semi-automated financial tracker using MS Excel and Power BI for visual analytics.
+    - Document Processing Automation using OCR and RAG: AI system to extract, process, and retrieve document info using Python, Transformers, Tesseract OCR, LangChain.
     Technical Skills:
-    - Languages: Python, SQL, C++, C
-    - Technologies: Data Warehousing, ETL, Transformers, LLMs, RAG, ExpressJS
+    - Languages: Python (LinkedIn Certified Top 5%), SQL, C++, C
+    - Technologies: Data Warehousing, ETL Pipelines, Transformer Models, LLMs, Generative AI, RAG, ExpressJS
     - Tools: VSCode, Power BI, MS Excel, Jupyter, Spyder, MySQL, Git, pip, npm
     - Cloud/Big Data: AWS (Basics), Apache Spark (Basics)
-    - Soft Skills: Communication, Time-Management, Problem-Solving, Collaboration, Creativity, Adaptability, Empathy
-    Interests: Data Science, Analytics, Puzzling, Quizzing, Machine Learning, Generative AI, Mathematics, Debating, Competitive Programming
-    Achievements: LOR from BPCL CRDC, Winner of Chemathlon, Gnosis India Quiz, 2-year gold medal in Shot-put.
+    - Soft Skills: Communication, Time-Management, Problem-Solving, Collaboration, Creativity, Adaptability, Empathy, Critical Thinking, Data-driven Decision Making, Troubleshooting
+    Interests: Data Science, Analytics, Puzzling, Quizzing, Machine Learning, Generative AI, Mathematics, Debating, Competitive Programming, Data Structures and Algorithms
+    Achievements: LOR from BPCL CRDC & TPO MNNIT, Winner of Chemathlon & Just in Case in Avishkar, Gnosis India Quiz, 2-year gold medal in Shot-put.
     Positions of Responsibility: Training and Placement Representative (2025 batch), Member of Expanding Horizons 5.0, Member of Hospitality Team in gnoTalks 2024.`,
 };
