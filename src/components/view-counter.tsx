@@ -9,18 +9,12 @@ export function ViewCounter() {
   const [views, setViews] = useState<number | null>(null);
 
   useEffect(() => {
-    // We only want to increment the view count in production
-    if (process.env.NODE_ENV === 'production') {
-      getAndIncrementViewCount()
-        .then(setViews)
-        .catch(err => {
-          console.error('Could not fetch views', err);
-          setViews(0);
-        });
-    } else {
-      // In development, just show a placeholder
-      setViews(1234);
-    }
+    getAndIncrementViewCount()
+      .then(setViews)
+      .catch(err => {
+        console.error('Could not fetch views', err);
+        setViews(0);
+      });
   }, []);
 
   return (
