@@ -2,6 +2,7 @@
 
 import { Printer, Phone, Mail, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ViewCounter } from './view-counter';
 
 type DashboardHeaderProps = {
   name: string;
@@ -27,7 +28,7 @@ export function DashboardHeader({
   };
 
   return (
-    <header className="mb-6 flex flex-col items-start justify-between gap-6 border-b border-border pb-6 print-hidden md:flex-row md:items-center">
+    <header className="mb-6 flex flex-col items-start justify-between gap-4 border-b border-border pb-6 print-hidden md:flex-row md:items-center">
       <div className="flex-1">
         <h1 className="font-headline text-4xl font-bold tracking-tight text-primary">
           {name}
@@ -68,10 +69,13 @@ export function DashboardHeader({
           </a>
         </div>
       </div>
-      <Button onClick={handlePrint} variant="outline" className="shrink-0">
-        <Printer className="mr-2 h-4 w-4" />
-        Export as PDF
-      </Button>
+      <div className="flex shrink-0 flex-col items-end gap-3">
+        <Button onClick={handlePrint} variant="outline" className="w-full">
+          <Printer className="mr-2 h-4 w-4" />
+          Export as PDF
+        </Button>
+        <ViewCounter />
+      </div>
     </header>
   );
 }
