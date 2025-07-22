@@ -10,31 +10,34 @@ export function ViewCounter() {
 
   useEffect(() => {
     async function fetchAndIncrementViews() {
-      // We only want to increment the count in production
-      if (process.env.NODE_ENV === 'production') {
-        const sessionViewedKey = 'has-viewed-resume-session';
-        const hasViewed = sessionStorage.getItem(sessionViewedKey);
+      const sessionViewedKey = 'has-viewed-resume-session';
+      const hasViewed = sessionStorage.getItem(sessionViewedKey);
 
-        if (!hasViewed) {
+      if (!hasViewed) {
+        try {
+          const fetchedViews = await getAndIncrementViewCount();
+          setViews(fetchedViews);
+          sessionStorage.setItem(sessionViewedKey, 'true');
+        } catch (error) {
+          console.error("Failed to increment view count:", error);
+          // Try to just get the count as a fallback
           try {
-            const fetchedViews = await getAndIncrementViewCount();
-            setViews(fetchedViews);
-            sessionStorage.setItem(sessionViewedKey, 'true');
-          } catch (error) {
-             setViews(0);
+            const currentViews = await getViewCount();
+            setViews(currentViews);
+          } catch (getCountError) {
+            console.error("Failed to get view count as fallback:", getCountError);
+            setViews(0);
           }
-        } else {
-           // If they've already viewed in this session, just get the count without incrementing
-           try {
-             const currentViews = await getViewCount();
-             setViews(currentViews);
-           } catch(error) {
-             setViews(0);
-           }
         }
       } else {
-        // In development, we can just show a placeholder
-        setViews(12345);
+        // If they've already viewed in this session, just get the count without incrementing
+        try {
+          const currentViews = await getViewCount();
+          setViews(currentViews);
+        } catch (error) {
+          console.error("Failed to get view count:", error);
+          setViews(0);
+        }
       }
     }
 
