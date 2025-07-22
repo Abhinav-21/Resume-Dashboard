@@ -3,7 +3,7 @@
 import { Eye } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Skeleton } from './ui/skeleton';
-import { getAndIncrementViewCount } from '@/services/view-counter';
+import { getAndIncrementViewCount, getViewCount } from '@/services/view-counter';
 
 export function ViewCounter() {
   const [views, setViews] = useState<number | null>(null);
@@ -16,16 +16,21 @@ export function ViewCounter() {
         const hasViewed = sessionStorage.getItem(sessionViewedKey);
 
         if (!hasViewed) {
-          const fetchedViews = await getAndIncrementViewCount();
-          setViews(fetchedViews);
-          sessionStorage.setItem(sessionViewedKey, 'true');
+          try {
+            const fetchedViews = await getAndIncrementViewCount();
+            setViews(fetchedViews);
+            sessionStorage.setItem(sessionViewedKey, 'true');
+          } catch (error) {
+             setViews(0);
+          }
         } else {
            // If they've already viewed in this session, just get the count without incrementing
-           const doc = await getAndIncrementViewCount(); // This will still increment, need a get only function
-           // For simplicity in this context, we will call an increment function
-           // but a dedicated 'get' function would be better in a real-world scenario.
-           const currentViews = await getAndIncrementViewCount();
-           setViews(currentViews -1 ); // rough adjustment
+           try {
+             const currentViews = await getViewCount();
+             setViews(currentViews);
+           } catch(error) {
+             setViews(0);
+           }
         }
       } else {
         // In development, we can just show a placeholder
