@@ -8,9 +8,20 @@ export function ViewCounter() {
   const [views, setViews] = useState<number | null>(null);
 
   useEffect(() => {
-    // Simulate fetching and incrementing a view count
-    const randomBase = Math.floor(Math.random() * (2500 - 1000 + 1) + 1000);
-    setViews(randomBase + 1);
+    const viewCountKey = 'resume-view-count';
+    const hasVisitedKey = 'has-visited-resume';
+
+    // Get current counts from localStorage, or initialize them
+    let currentCount = parseInt(localStorage.getItem(viewCountKey) || '0', 10);
+    const hasVisited = localStorage.getItem(hasVisitedKey) === 'true';
+
+    if (!hasVisited) {
+      currentCount += 1;
+      localStorage.setItem(viewCountKey, currentCount.toString());
+      localStorage.setItem(hasVisitedKey, 'true');
+    }
+
+    setViews(currentCount);
   }, []);
 
   return (
