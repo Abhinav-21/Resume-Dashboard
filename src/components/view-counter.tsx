@@ -2,19 +2,15 @@
 
 import {Eye} from 'lucide-react';
 import {useEffect, useState} from 'react';
-import {getAndIncrementViewCount} from '@/services/view-counter';
 import {Skeleton} from './ui/skeleton';
 
 export function ViewCounter() {
   const [views, setViews] = useState<number | null>(null);
 
   useEffect(() => {
-    getAndIncrementViewCount()
-      .then(setViews)
-      .catch(err => {
-        console.error('Could not fetch views', err);
-        setViews(0);
-      });
+    // Simulate fetching and incrementing a view count
+    const randomBase = Math.floor(Math.random() * (2500 - 1000 + 1) + 1000);
+    setViews(randomBase + 1);
   }, []);
 
   return (
