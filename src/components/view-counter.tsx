@@ -3,46 +3,51 @@
 import { Eye } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Skeleton } from './ui/skeleton';
-import { getAndIncrementViewCount, getViewCount } from '@/services/view-counter';
+
+const COUNT_API_NAMESPACE = 'resume-insights-dashboard';
+const COUNT_API_KEY = 'global-visits';
 
 export function ViewCounter() {
   const [views, setViews] = useState<number | null>(null);
 
   useEffect(() => {
     async function fetchAndIncrementViews() {
-      const sessionViewedKey = 'has-viewed-resume-session';
+      const sessionViewedKey = 'has-viewed-session';
       const hasViewed = sessionStorage.getItem(sessionViewedKey);
+      
+      const endpoint = hasViewed 
+        ? `https://api.countapi.xyz/get/${COUNT_API_NAMESPACE}/${COUNT_API_KEY}`
+        : `https://api.countapi.xyz/hit/${COUNT_API_NAMESPACE}/${COUNT_API_KEY}`;
 
-      if (!hasViewed) {
-        try {
-          const fetchedViews = await getAndIncrementViewCount();
-          setViews(fetchedViews);
-          sessionStorage.setItem(sessionViewedKey, 'true');
-        } catch (error) {
-          console.error("Failed to increment view count:", error);
-          // Try to just get the count as a fallback
-          try {
-            const currentViews = await getViewCount();
-            setViews(currentViews);
-          } catch (getCountError) {
-            console.error("Failed to get view count as fallback:", getCountError);
-            setViews(0);
+      try {
+        const response = await fetch(endpoint);
+        const data = await response.json();
+        
+        if (data.value !== undefined) {
+          setViews(data.value);
+        } else {
+          // If the key doesn't exist yet, the 'get' call might fail.
+          // Let's try to get the initial value from 'hit' if views are null.
+          if(views === null) {
+            const hitResponse = await fetch(`https://api.countapi.xyz/hit/${COUNT_API_NAMESPACE}/${COUNT_API_KEY}`);
+            const hitData = await hitResponse.json();
+            setViews(hitData.value);
           }
         }
-      } else {
-        // If they've already viewed in this session, just get the count without incrementing
-        try {
-          const currentViews = await getViewCount();
-          setViews(currentViews);
-        } catch (error) {
-          console.error("Failed to get view count:", error);
-          setViews(0);
+        
+        if (!hasViewed) {
+          sessionStorage.setItem(sessionViewedKey, 'true');
         }
+
+      } catch (error) {
+        console.error("Failed to fetch view count:", error);
+        // Don't show a broken counter, just hide it or show 0.
+        setViews(0);
       }
     }
 
     fetchAndIncrementViews();
-  }, []);
+  }, [views]);
 
   return (
     <div className="flex items-center gap-2 text-sm text-muted-foreground">
