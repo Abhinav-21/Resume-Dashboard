@@ -59,7 +59,7 @@ export const resumeData = {
         'Matplotlib',
       ],
       description:
-        'This project focuses on classifying Internet Hinglish memes by leveraging both textual and visual information. The primary goal was to address sentiment analysis (positive, negative, neutral) and emotion classification (humor, sarcasm, etc.) as part of the Memotion 3.0 competition. The project addresses two primary tasks: Task A - Sentiment Analysis (classifying memes into positive, negative, or neutral categories) and Task B - Emotion Classification (identifying humor, sarcasm, offensiveness, and motivational content). The dataset is sourced from the Memotion 3.0 competition and includes 10,000 internet memes, with a subset featuring Hinglish. The project utilizes DistilBERTMulti for text analysis, VGG16 for image analysis and a Multimodal Model combining both to leverage both text and image features for classification.',
+        'This project focuses on classifying Internet Hinglish memes using multimodal learning techniques, leveraging both textual and visual information to accurately categorize them. As part of the Memotion 3.0 competition, it addresses sentiment analysis (positive, negative, neutral) and emotion classification (humor, sarcasm, etc.). The project utilized a dataset of 10,000 memes, using DistilBERT-Multilingual for text analysis and a pre-trained VGG16 for image feature extraction. By fusing these modalities, the model achieved a competitive F1-weighted score of 78.82%, significantly outperforming unimodal models, especially in classifying Humor (90.04% F1-score) and Motivational (95.62% F1-score) content.',
       points: [
         'Utilized the Memotion 3.0 dataset of 10,000 memes, including Hinglish text and OCR-extracted content.',
         'Constructed a multimodal architecture combining DistilBERT-Multilingual for text analysis and a pre-trained VGG16 for image feature extraction.',
@@ -82,7 +82,7 @@ export const resumeData = {
         'Web3.storage',
       ],
       description:
-        'Developed a full-stack, web-based platform to securely manage healthcare records and provide data-driven public health insights. The system was designed with a focus on data integrity, patient privacy, and scalability, using modern web technologies to create a robust solution for healthcare data management. The platform aimed to solve the problem of fragmented and insecure health records by providing a centralized, secure, and analyzable repository for patient data.',
+        'Developed a full-stack, web-based platform to securely manage healthcare records and provide data-driven public health insights. The system, built on the MERN stack, aimed to solve the problem of fragmented and insecure health records by providing a centralized, secure, and analyzable repository. It featured decentralized document storage using IPFS (via Web3.storage) with token-based access control, ensuring patient privacy while allowing hospitals to upload records securely. The platform included a patient-level analytics dashboard built with Python to visualize key health metrics like vaccination rates and chronic disease prevalence, successfully demonstrating an efficient way to manage healthcare records and generate valuable public health insights.',
       points: [
         'Built with a MERN stack (MongoDB, Express, React, Node.js) for a robust and scalable architecture.',
         'Implemented decentralized, secure document storage using IPFS via Web3.storage, with token-based access control for patient privacy.',
@@ -97,7 +97,7 @@ export const resumeData = {
         'https://github.com/Abhinav-21/Digit_Classification-Neural_Network',
       technologies: ['Python', 'NumPy', 'Pickle', 'Matplotlib', 'Keras'],
       description:
-        'Implemented and trained a fully-connected neural network from scratch to classify handwritten digits from the MNIST dataset. The project goal was to build a deep understanding of fundamental neural network components, including layers, activation functions, forward propagation, and backpropagation, without relying on high-level deep learning libraries for the core logic. The model was designed to serve as a foundational exercise in understanding the mechanics of neural networks.',
+        "Implemented and trained a fully-connected neural network from scratch to classify handwritten digits from the MNIST dataset. The project's goal was to build a deep understanding of fundamental neural network components—layers, activation functions, forward propagation, and backpropagation—without relying on high-level deep learning libraries for the core logic. Constructed using only Python and NumPy, the model featured a ReLU activation function for hidden layers and a Softmax output layer. It was optimized using mini-batch gradient descent and achieved a 93% classification accuracy on the test set, demonstrating a solid grasp of core deep learning concepts.",
       points: [
         'Constructed the network using only Python and NumPy to handle core matrix operations and computations.',
         'Implemented the ReLU activation function for hidden layers and a Softmax output layer for multi-class probability distribution.',
@@ -111,7 +111,7 @@ export const resumeData = {
       github: null,
       technologies: ['MS Excel', 'Power BI', 'Pivot Tables', 'Data Validation'],
       description:
-        'Built a semi-automated financial tracker in MS Excel with an integrated Power BI dashboard. The goal was to create a user-friendly system for personal expense management, budgeting, and visual reporting without manual data aggregation. The project aimed to solve the common problem of manual and tedious expense tracking by leveraging the capabilities of Excel for data management and Power BI for interactive visualization, providing a clear and actionable overview of personal finances.',
+        'Built a semi-automated financial tracker in MS Excel with an integrated Power BI dashboard to create a user-friendly system for personal expense management and visual reporting. The project aimed to solve the problem of tedious manual expense tracking by automating income and expense logging with Excel tables, built-in formulas, and data validation rules. It featured interactive Pivot Tables and Pie Charts to summarize spending, and the Excel workbook was connected to a dynamic Power BI dashboard to visualize financial trends, spending patterns, and progress against budget goals, providing a clear, at-a-glance view of financial health.',
       points: [
         'Automated income and expense tracking using Excel tables with built-in formulas for category tagging and month-end balance carry-forward.',
         'Implemented data validation rules to ensure data integrity and prevent incorrect entries.',
@@ -125,7 +125,7 @@ export const resumeData = {
       github: 'https://github.com/Abhinav-21/Document-Processing-Atomation',
       technologies: ['Python', 'Transformers', 'Tesseract OCR', 'LangChain'],
       description:
-        'Developed an AI-powered system to automate the extraction, processing, and retrieval of information from unstructured documents. The solution integrates Optical Character Recognition (OCR) with a Retrieval-Augmented Generation (RAG) pipeline to enable intelligent search and question-answering capabilities. The project aimed to tackle the challenge of manually sifting through large volumes of documents by creating an intelligent system that can understand and retrieve information based on natural language queries.',
+        'Developed an AI-powered system to automate the extraction, processing, and retrieval of information from unstructured documents. The solution integrates Optical Character Recognition (OCR) with a Retrieval-Augmented Generation (RAG) pipeline to enable intelligent search and question-answering capabilities. By using Tesseract OCR to extract raw text and building a RAG pipeline with LangChain to chunk, embed, and store it in a vector database, the system allows an LLM to understand natural language queries and retrieve contextually relevant information. This significantly reduces manual document review time and makes large document repositories more accessible and actionable.',
       points: [
         'Utilized Tesseract OCR to accurately extract raw text from scanned documents and images.',
         'Built a RAG pipeline using LangChain that chunks the extracted text, generates embeddings, and stores them in a vector database.',
@@ -214,18 +214,20 @@ export const resumeData = {
   ],
   positions: [
     'Training and Placement Representative of the batch 2025',
+    'Event Coordinator for Chemathlon, the flagship event of Rasayan (2024)',
+    'Event Coordinator for Scavenger Hunt, a fun event under Rasayan (2024)',
     'Member of Expanding Horizons 5.0 (under Student Mentorship Program).',
     'Member of Hospitality Team in gnoTalks 2024',
   ],
   fullText: `Abhinav Tiwari
 +91-7054425113 | abhiitiwarii0@gmail.com | Abhinav-21 | abhinav-tiwari-mnnit
-A highly motivated Chemical Engineering graduate from MNNIT Allahabad with a strong passion for Data Science, Machine Learning, and Software Development. Possesses hands-on experience in building AI-driven solutions, including RAG pipelines and OCR models, and is proficient in Python, SQL, and various data analytics tools. A proven problem-solver with strong communication and collaboration skills, seeking to leverage technical expertise in a challenging role.
+A highly motivated Engineering graduate from MNNIT Allahabad with a strong passion for Data Science, Machine Learning, and Software Development. Possesses hands-on experience in building AI-driven solutions, including RAG pipelines and OCR models, and is proficient in Python, SQL, and various data analytics tools. A proven problem-solver with strong communication and collaboration skills, seeking to leverage technical expertise in a challenging role.
 Education:
 - Motilal Nehru National Institute of Technology Allahabad, B.Tech Chemical Engineering (2021-2025), CPI: 8.04
 - S.K.D. Academy, Intermediate (2020-2021), 95.6%
 - S.K.D. Academy, Matriculation (2018-2019), 94.4%
 Experience:
-- Shorthills AI, SDE Intern (March 2024 - Ongoing): Developed and tested an end-to-end OCR pipeline for document ingestion and data extraction using Tesseract, LangChain, and vector databases. Engineered a RAG pipeline for intelligent, context-aware Q&A over document collections. Wrote sanity and unit tests to validate OCR accuracy and backend API behavior. Utilized SQL for data validation and cleanup in post-OCR databases, fixing inconsistencies. Debugged frontend (React) and backend (Python/Node.js) components of an internal QA portal.
+- Shorthills AI, SDE Intern (March 2025 - Ongoing): Developed and tested an end-to-end OCR pipeline for document ingestion and data extraction using Tesseract, LangChain, and vector databases. Engineered a RAG pipeline for intelligent, context-aware Q&A over document collections. Wrote sanity and unit tests to validate OCR accuracy and backend API behavior. Utilized SQL for data validation and cleanup in post-OCR databases, fixing inconsistencies. Debugged frontend (React) and backend (Python/Node.js) components of an internal QA portal.
 Projects:
 - Multimodal Learning for Hinglish Meme Classification: This project focuses on classifying Internet Hinglish memes by leveraging both textual and visual information. The primary goal was to address sentiment analysis (positive, negative, neutral) and emotion classification (humor, sarcasm, etc.) as part of the Memotion 3.0 competition. The project addresses two primary tasks: Task A - Sentiment Analysis (classifying memes into positive, negative, or neutral categories) and Task B - Emotion Classification (identifying humor, sarcasm, offensiveness, and motivational content). The dataset is sourced from the Memotion 3.0 competition and includes 10,000 internet memes, with a subset featuring Hinglish. The project utilizes DistilBERTMulti for text analysis, VGG16 for image analysis and a Multimodal Model combining both to leverage both text and image features for classification. Utilized the Memotion 3.0 dataset of 10,000 memes, including Hinglish text and OCR-extracted content. Constructed a multimodal architecture combining DistilBERT-Multilingual for text analysis and a pre-trained VGG16 for image feature extraction. Fused text and image features to create a joint representation, enabling the model to learn from both modalities simultaneously. Achieved a competitive F1-weighted score of 78.82% in sentiment and emotion classification tasks. The multimodal approach significantly outperformed unimodal models, especially in classifying Humor (90.04% F1-score) and Motivational (95.62% F1-score) content.
 - Healthcare Record Management System: Developed a full-stack, web-based platform to securely manage healthcare records and provide data-driven public health insights. The system was designed with a focus on data integrity, patient privacy, and scalability, using modern web technologies to create a robust solution for healthcare data management. The platform aimed to solve the problem of fragmented and insecure health records by providing a centralized, secure, and analyzable repository for patient data. Built with a MERN stack (MongoDB, Express, React, Node.js) for a robust and scalable architecture. Implemented decentralized, secure document storage using IPFS via Web3.storage, with token-based access control for patient privacy. Designed a system allowing hospitals to upload patient records securely while restricting access to authorized personnel. Created a patient-level analytics dashboard using Python to visualize key health metrics like vaccination rates, chronic disease prevalence, and community BMI trends. The system successfully demonstrated a secure and efficient way to manage healthcare records, providing valuable insights for public health initiatives.
@@ -244,7 +246,5 @@ Technical Skills:
 Interests: Data Science, Analytics, Puzzling, Quizzing, Machine Learning, Generative AI, Mathematics, Debating, Competitive
 Programming, Data Structures and Algorithms, Artificial Intelligence
 Achievements: Received a LOR at BPCL CRDC for performance during the internship. Got an LOR from Bharat Petroleum CRDC and TPO MNNIT. Winner of Chemathlon under Rasayan in Avishkar (August, 2024). Winner of Just in Case under Nirmaan in Avishkar (August, 2024). Winner (team) of Gnosis India Quiz (March, 2024). 2-year consecutive gold medal winner in Annual Athletics Meet in Shot-put (August, 2022). Winner Chemathlon under Rasayan (Mock Placement Drive) (August, 2022).
-Positions of Responsibility: Training and Placement Representative of the batch 2025. Member of Expanding Horizons 5.0 (under Student Mentorship Program). Member of Hospitality Team in gnoTalks 2024.`,
+Positions of Responsibility: Training and Placement Representative of the batch 2025. Event Coordinator for Chemathlon, the flagship event of Rasayan (2024). Event Coordinator for Scavenger Hunt, a fun event under Rasayan (2024). Member of Expanding Horizons 5.0 (under Student Mentorship Program). Member of Hospitality Team in gnoTalks 2024.`,
 };
-
-    
