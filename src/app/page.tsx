@@ -1,3 +1,4 @@
+
 import { resumeData } from '@/lib/resume-data';
 import { DashboardHeader } from '@/components/dashboard-header';
 import { EducationCard } from '@/components/education-card';
@@ -15,7 +16,7 @@ export default function Home() {
       <div className="mx-auto max-w-screen-2xl">
         <DashboardHeader
           name={resumeData.name}
-          title="Bachelor of Technology, NIT Allahabad"
+          title="B.Tech Graduate, NIT Allahabad"
           contact={resumeData.contact}
           socials={resumeData.socials}
         />
@@ -40,3 +41,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
