@@ -12,7 +12,7 @@ import { RecruiterQnaCard } from '@/components/recruiter-qna-card';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-transparent p-4 sm:p-6 lg:p-8">
       <div className="mx-auto max-w-screen-2xl">
         <DashboardHeader
           name={resumeData.name}
@@ -41,5 +41,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

@@ -2,8 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(-45deg, #f0f0f0, #e6e6fa, #f0f0f0, #e6e6fa);
+  background-size: 400% 400%;
+  animation: gradient-flow 15s ease infinite;
 }
 
 @layer base {
@@ -67,13 +82,24 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+  }
+  
+  .dark body {
+    background: linear-gradient(-45deg, #0a0a0a, #1a1a2e, #0a0a0a, #1a1a2e);
+    background-size: 400% 400%;
+    animation: gradient-flow 15s ease infinite;
+  }
+
+  body > div {
+    @apply bg-transparent;
   }
 }
 
 @media print {
   body {
-    background-color: white !important;
+    background: none !important;
+    animation: none !important;
   }
   .print-hidden {
     display: none;
