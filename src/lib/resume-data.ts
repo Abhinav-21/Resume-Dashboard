@@ -32,31 +32,16 @@ export const resumeData = {
   experience: [
     {
       company: 'Shorthills AI',
-      role: 'SDE Intern (Training Phase)',
-      duration: 'March 2025 - April 2025',
+      role: 'SDE Intern',
+      duration: 'March 2025 - July 2025',
       location: 'Gurugram, Haryana',
       points: [
-        'Underwent rigorous hands-on training in Python, SQL, Advanced Excel, and Linux CLI & scripting, focusing on enterprise data workflows.',
-        'Built familiarity with Git version control, team-based branching strategies, and collaborative development best practices.',
-        'Learned and implemented Prompt Engineering techniques to fine-tune LLM responses for specific use cases (e.g., document processing, classification).',
-        'Gained foundational knowledge of testing methodologies, including sanity and unit testing principles.',
-        'Completed a capstone project on a Retrieval-Augmented Generation (RAG) pipeline, integrating LLMs with vector databases (Pinecone/Faiss) and using LangChain and Tesseract OCR.',
-      ],
-    },
-    {
-      company: 'Shorthills AI',
-      role: 'SDE Intern (Pedigree Project – OCR & QA Automation)',
-      duration: 'April 2025 - July 2025',
-      location: 'Gurugram, Haryana',
-      points: [
-        'Worked as part of a cross-functional team to build an end-to-end OCR-based pipeline for document ingestion and data extraction for Pedigree brand packaging.',
-        'Created training data for OCR models by preprocessing PDFs/images, annotating text regions, and curating a diverse dataset.',
-        'Wrote sanity test scripts and unit test cases in Python to validate OCR accuracy and backend API behavior.',
-        'Used SQL queries to inspect and validate data stored in post-OCR databases; worked on data cleanup scripts to fix inconsistent entries.',
-        'Conducted performance benchmarking of OCR models, measuring inference time and accuracy on varied document types.',
-        'Debugged and fixed bugs in both frontend (React) and backend (Python/Node.js) components of the internal QA portal.',
-        'Worked with DBeaver for database navigation and Postman to test API endpoints during integration testing.',
-        'Used Git to manage feature branches, raised pull requests, and participated in code reviews.',
+        'Developed an end-to-end OCR pipeline for document ingestion and data extraction.',
+        'Engineered a RAG pipeline using LangChain, vector databases (Pinecone/Faiss), and Tesseract OCR.',
+        'Wrote Python-based sanity and unit tests to validate OCR accuracy and backend API behavior.',
+        'Utilized SQL for data validation and cleanup in post-OCR databases.',
+        'Debugged and fixed bugs in React frontend and Python/Node.js backend components.',
+        'Trained in Python, SQL, Advanced Excel, Linux CLI, and Git for enterprise workflows.',
       ],
     },
   ],
@@ -208,8 +193,7 @@ Education:
 - S.K.D. Academy, Intermediate (2020-2021), 95.6%
 - S.K.D. Academy, Matriculation (2018-2019), 94.4%
 Experience:
-- Shorthills AI, SDE Intern (Training Phase) (March 2025 - April 2025): Underwent rigorous hands-on training in Python, SQL, Advanced Excel, and Linux CLI & scripting. Built familiarity with Git, prompt engineering, and testing methodologies. Completed a capstone project on a RAG pipeline using LangChain, OpenAI API, and Pinecone/Faiss.
-- Shorthills AI, SDE Intern (Pedigree Project – OCR & QA Automation) (April 2025 - July 2025): Worked on an end-to-end OCR pipeline for Pedigree brand packaging. Created training data, wrote test scripts in Python, and used SQL for data validation. Conducted performance benchmarking and fixed bugs in React and Node.js components.
+- Shorthills AI, SDE Intern (March 2025 - July 2025): Developed an end-to-end OCR pipeline for document ingestion and data extraction. Engineered a RAG pipeline using LangChain, vector databases (Pinecone/Faiss), and Tesseract OCR. Wrote Python-based sanity and unit tests to validate OCR accuracy and backend API behavior. Utilized SQL for data validation and cleanup in post-OCR databases. Debugged and fixed bugs in React frontend and Python/Node.js backend components. Trained in Python, SQL, Advanced Excel, Linux CLI, and Git for enterprise workflows.
 Projects:
 - Multimodal Learning for Hinglish Meme Classification: Sentiment analyzer using the Memotion 3.0 dataset. Combined DistilBERT-Multilingual and VGG16. Achieved 78.82% F1-score.
 - Healthcare Record Management System: Web system with secure document storage (Web3.storage) and health data analytics using MERN stack and Python.
