@@ -2,7 +2,6 @@
 
 import { Printer, Phone, Mail, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { ViewCounter } from './view-counter';
 
 type DashboardHeaderProps = {
   name: string;
@@ -74,7 +73,6 @@ export function DashboardHeader({
           <Printer className="mr-2 h-4 w-4" />
           Export as PDF
         </Button>
-        <ViewCounter />
       </div>
     </header>
   );
