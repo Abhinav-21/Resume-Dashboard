@@ -36,12 +36,12 @@ export const resumeData = {
       duration: 'March 2025 - July 2025',
       location: 'Gurugram, Haryana',
       points: [
-        'Developed an end-to-end OCR pipeline for document ingestion and data extraction.',
-        'Engineered a RAG pipeline using LangChain, vector databases (Pinecone/Faiss), and Tesseract OCR.',
-        'Wrote Python-based sanity and unit tests to validate OCR accuracy and backend API behavior.',
-        'Utilized SQL for data validation and cleanup in post-OCR databases.',
-        'Debugged and fixed bugs in React frontend and Python/Node.js backend components.',
-        'Trained in Python, SQL, Advanced Excel, Linux CLI, and Git for enterprise workflows.',
+        'Underwent training in Python, SQL, Advanced Excel, Linux CLI, Git, and Prompt Engineering.',
+        'Developed and tested an end-to-end OCR pipeline for document ingestion and data extraction using Tesseract, LangChain, and vector databases.',
+        'Engineered a RAG pipeline for intelligent, context-aware Q&A over document collections.',
+        'Wrote sanity and unit tests to validate OCR accuracy and backend API behavior.',
+        'Utilized SQL for data validation and cleanup in post-OCR databases, fixing inconsistencies.',
+        'Debugged frontend (React) and backend (Python/Node.js) components of an internal QA portal.',
       ],
     },
   ],
@@ -121,14 +121,25 @@ export const resumeData = {
     },
   ],
   skills: {
-    languages: ['Python (LinkedIn Certified Top 5%)', 'SQL', 'C++', 'C'],
+    languages: ['Python (LinkedIn Top 5%)', 'SQL', 'C++', 'C', 'Bash'],
     technologies: [
       'Data Warehousing',
       'ETL Pipelines',
       'Transformer Models',
       'LLMs',
-      'Generative AI',
       'RAG',
+      'OCR',
+      'Generative AI',
+      'Prompt Engineering',
+      'Scripting',
+      'Model Evaluation',
+    ],
+    testing: [
+      'Unit Testing',
+      'Sanity Testing',
+      'Frontend/Backend Testing',
+      'Bug Tracking',
+      'Performance Benchmarking',
     ],
     tools: [
       'VSCode',
@@ -137,23 +148,25 @@ export const resumeData = {
       'Jupyter Notebook',
       'Spyder',
       'MySQL',
+      'Postman',
       'Git',
       'pip',
       'npm',
+      'DBeaver',
     ],
-    frameworks: ['ExpressJS'],
-    cloud: ['AWS (Basics)', 'Apache Spark (Basics)'],
+    frameworks: ['ExpressJS', 'LangChain', 'Tesseract OCR'],
+    cloud: ['AWS (Basics)', 'Apache Spark (Basics)', 'Vector Databases (Pinecone/Faiss)'],
     softSkills: [
       'Communication',
-      'Time-Management',
       'Problem-Solving',
+      'Debugging',
       'Collaboration',
-      'Creativity',
       'Adaptability',
-      'Empathy',
       'Critical Thinking',
       'Data-driven Decision Making',
       'Troubleshooting',
+      'Time Management',
+      'Empathy',
     ],
     coursework: [
       'Data Structures and Algorithms',
@@ -193,7 +206,7 @@ Education:
 - S.K.D. Academy, Intermediate (2020-2021), 95.6%
 - S.K.D. Academy, Matriculation (2018-2019), 94.4%
 Experience:
-- Shorthills AI, SDE Intern (March 2025 - July 2025): Developed an end-to-end OCR pipeline for document ingestion and data extraction. Engineered a RAG pipeline using LangChain, vector databases (Pinecone/Faiss), and Tesseract OCR. Wrote Python-based sanity and unit tests to validate OCR accuracy and backend API behavior. Utilized SQL for data validation and cleanup in post-OCR databases. Debugged and fixed bugs in React frontend and Python/Node.js backend components. Trained in Python, SQL, Advanced Excel, Linux CLI, and Git for enterprise workflows.
+- Shorthills AI, SDE Intern (March 2025 - July 2025): Underwent training in Python, SQL, Advanced Excel, Linux CLI, Git, and Prompt Engineering. Developed and tested an end-to-end OCR pipeline for document ingestion and data extraction using Tesseract, LangChain, and vector databases. Engineered a RAG pipeline for intelligent, context-aware Q&A over document collections. Wrote sanity and unit tests to validate OCR accuracy and backend API behavior. Utilized SQL for data validation and cleanup in post-OCR databases, fixing inconsistencies. Debugged frontend (React) and backend (Python/Node.js) components of an internal QA portal.
 Projects:
 - Multimodal Learning for Hinglish Meme Classification: Sentiment analyzer using the Memotion 3.0 dataset. Combined DistilBERT-Multilingual and VGG16. Achieved 78.82% F1-score.
 - Healthcare Record Management System: Web system with secure document storage (Web3.storage) and health data analytics using MERN stack and Python.
@@ -201,12 +214,13 @@ Projects:
 - Financial Insights Dashboard: Semi-automated financial tracker using MS Excel and Power BI for visual analytics.
 - Document Processing Automation using OCR and RAG: AI system to extract, process, and retrieve document info using Python, Transformers, Tesseract OCR, LangChain.
 Technical Skills:
-- Languages: Python (LinkedIn Certified Top 5%), SQL, C++, C
-- Technologies: Data Warehousing, ETL Pipelines, Transformer Models, LLMs, Generative AI, RAG
-- Frameworks: ExpressJS
-- Tools: VSCode, Power BI, MS Excel, Jupyter, Spyder, MySQL, Git, pip, npm
-- Cloud/Big Data: AWS (Basics), Apache Spark (Basics)
-- Soft Skills: Communication, Time-Management, Problem-Solving, Collaboration, Creativity, Adaptability, Empathy, Critical Thinking, Data-driven Decision Making, Troubleshooting
+- Languages: Python (LinkedIn Top 5%), SQL, C++, C, Bash
+- Technologies: Data Warehousing, ETL Pipelines, Transformer Models, LLMs, RAG, OCR, Generative AI, Prompt Engineering, Scripting, Model Evaluation
+- Testing & QA: Unit Testing, Sanity Testing, Frontend/Backend Testing, Bug Tracking, Performance Benchmarking
+- Frameworks: ExpressJS, LangChain, Tesseract OCR
+- Developer & Analytics Tools: VSCode, Power BI, MS Excel, Jupyter, Spyder, MySQL, Postman, Git, pip, npm, DBeaver
+- Cloud & Big Data: AWS (Basics), Apache Spark (Basics), Vector Databases (Pinecone/Faiss)
+- Soft Skills: Communication, Problem-Solving, Debugging, Collaboration, Adaptability, Critical Thinking, Data-driven Decision Making, Troubleshooting, Time Management, Empathy
 - Coursework: Data Structures and Algorithms, Web Development, Machine Learning
 Interests: Data Science, Analytics, Puzzling, Quizzing, Machine Learning, Generative AI, Mathematics, Debating, Competitive Programming, Data Structures and Algorithms, Artificial Intelligence
 Achievements: Received a LOR at BPCL CRDC for performance during the internship. Got an LOR from Bharat Petroleum CRDC and TPO MNNIT. Winner of Chemathlon under Rasayan in Avishkar (August, 2024). Winner of Just in Case under Nirmaan in Avishkar (August, 2024). Winner (team) of Gnosis India Quiz (March, 2024). 2-year consecutive gold medal winner in Annual Athletics Meet in Shot-put (August, 2022). Winner Chemathlon under Rasayan (Mock Placement Drive) (August, 2022).

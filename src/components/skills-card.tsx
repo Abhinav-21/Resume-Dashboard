@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 type Skills = {
   languages: string[];
   technologies: string[];
+  testing: string[];
   tools: string[];
   frameworks: string[];
   cloud: string[];
@@ -43,9 +44,10 @@ export function SkillsCard({ skills }: SkillsCardProps) {
       <CardContent className="space-y-4">
         <SkillCategory title="Languages" skills={skills.languages} />
         <SkillCategory title="Technologies" skills={skills.technologies} />
+        <SkillCategory title="Testing & QA" skills={skills.testing} />
         <SkillCategory title="Developer & Analytics Tools" skills={skills.tools} />
         <SkillCategory title="Frameworks" skills={skills.frameworks} />
-        <SkillCategory title="Cloud/Big Data" skills={skills.cloud} />
+        <SkillCategory title="Cloud & Big Data" skills={skills.cloud} />
         <SkillCategory title="Soft Skills" skills={skills.softSkills} />
       </CardContent>
     </Card>
