@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
+import { ThemedCursor } from '@/components/themed-cursor';
 
 const fontBody = Inter({
   subsets: ['latin'],
@@ -28,11 +29,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'min-h-screen bg-background font-body antialiased',
+          'min-h-screen font-body antialiased animated-gradient',
           fontBody.variable,
           fontHeadline.variable
         )}
       >
+        <ThemedCursor />
         {children}
         <Toaster />
       </body>

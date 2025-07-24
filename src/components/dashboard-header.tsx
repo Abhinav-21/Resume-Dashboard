@@ -2,6 +2,7 @@
 
 import { Printer, Phone, Mail, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import confetti from 'canvas-confetti';
 
 type DashboardHeaderProps = {
   name: string;
@@ -26,10 +27,22 @@ export function DashboardHeader({
     window.print();
   };
 
+  const handleNameClick = () => {
+    confetti({
+      particleCount: 150,
+      spread: 70,
+      origin: { y: 0.6 },
+    });
+  };
+
   return (
     <header className="mb-6 flex flex-col items-start justify-between gap-4 border-b border-border pb-6 print-hidden md:flex-row md:items-center">
       <div className="flex-1">
-        <h1 className="font-headline text-4xl font-bold tracking-tight text-primary">
+        <h1
+          className="font-headline text-4xl font-bold tracking-tight text-primary cursor-pointer hover:animate-pulse"
+          onClick={handleNameClick}
+          title="Click me for a surprise!"
+        >
           {name}
         </h1>
         <p className="mt-1 text-lg text-muted-foreground">{title}</p>

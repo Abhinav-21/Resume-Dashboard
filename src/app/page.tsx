@@ -16,7 +16,7 @@ export default function Home() {
       <div className="mx-auto max-w-screen-2xl">
         <DashboardHeader
           name={resumeData.name}
-          title="B.Tech Graduate, NIT Allahabad"
+          title={resumeData.title}
           contact={resumeData.contact}
           socials={resumeData.socials}
         />
