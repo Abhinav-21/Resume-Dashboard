@@ -1,7 +1,7 @@
 
 export const resumeData = {
   name: 'Abhinav Tiwari',
-  summary: `A highly motivated Chemical Engineering graduate from MNNIT Allahabad with a strong passion for Data Science, Machine Learning, and Software Development. Possesses hands-on experience in building AI-driven solutions, including RAG pipelines and OCR models, and is proficient in Python, SQL, and various data analytics tools. A proven problem-solver with strong communication and collaboration skills, seeking to leverage technical expertise in a challenging role.`,
+  summary: `A highly motivated Engineering graduate from MNNIT Allahabad with a strong passion for Data Science, Machine Learning, and Software Development. Possesses hands-on experience in building AI-driven solutions, including RAG pipelines and OCR models, and is proficient in Python, SQL, and various data analytics tools. A proven problem-solver with strong communication and collaboration skills, seeking to leverage technical expertise in a challenging role.`,
   contact: {
     phone: '+91-7054425113',
     email: 'abhiitiwarii0@gmail.com',
@@ -34,7 +34,7 @@ export const resumeData = {
     {
       company: 'Shorthills AI',
       role: 'SDE Intern',
-      duration: 'March 2024 - Ongoing',
+      duration: 'March 2025 - Ongoing',
       location: 'Gurugram, Haryana',
       points: [
         'Developed and tested an end-to-end OCR pipeline for document ingestion and data extraction using Tesseract, LangChain, and vector databases.',
