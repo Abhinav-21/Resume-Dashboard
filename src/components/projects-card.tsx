@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import {
   Card,
   CardContent,
@@ -14,11 +13,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Github, Sparkles } from 'lucide-react';
-import { summarizeProject } from '@/ai/flows/summarize-project';
-import { useToast } from '@/hooks/use-toast';
-import { Skeleton } from './ui/skeleton';
+import { Github } from 'lucide-react';
 
 type Project = {
   title: string;
@@ -33,30 +28,6 @@ type ProjectsCardProps = {
 };
 
 export function ProjectsCard({ projects }: ProjectsCardProps) {
-  const [summaries, setSummaries] = useState<Record<string, string>>({});
-  const [loading, setLoading] = useState<Record<string, boolean>>({});
-  const { toast } = useToast();
-
-  const handleSummarize = async (project: Project, index: number) => {
-    const projectKey = `project-${index}`;
-    if (summaries[projectKey]) return; // Don't re-generate
-
-    setLoading(prev => ({ ...prev, [projectKey]: true }));
-    try {
-      const result = await summarizeProject(project);
-      setSummaries(prev => ({ ...prev, [projectKey]: result.summary }));
-    } catch (error) {
-      console.error('Error summarizing project:', error);
-      toast({
-        variant: 'destructive',
-        title: 'Error',
-        description: 'Failed to generate project summary. Please try again.',
-      });
-    } finally {
-      setLoading(prev => ({ ...prev, [projectKey]: false }));
-    }
-  };
-
   return (
     <Card className="print-card">
       <CardHeader>
@@ -65,10 +36,6 @@ export function ProjectsCard({ projects }: ProjectsCardProps) {
       <CardContent>
         <Accordion type="single" collapsible className="w-full">
           {projects.map((project, index) => {
-            const projectKey = `project-${index}`;
-            const isLoading = loading[projectKey];
-            const summary = summaries[projectKey];
-
             return (
               <AccordionItem key={index} value={`item-${index}`}>
                 <AccordionTrigger className="hover:no-underline">
@@ -94,26 +61,7 @@ export function ProjectsCard({ projects }: ProjectsCardProps) {
                     <p className="text-sm text-muted-foreground">
                       {project.description}
                     </p>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={() => handleSummarize(project, index)}
-                      disabled={isLoading}
-                      className="print-hidden shrink-0"
-                    >
-                      <Sparkles className="mr-2 h-4 w-4" />
-                      {isLoading ? 'Summarizing...' : 'Summarize'}
-                    </Button>
                   </div>
-                  {isLoading && <Skeleton className="h-16 w-full" />}
-                  {summary && (
-                    <div className="mt-2 rounded-md border bg-accent/50 p-3 text-sm">
-                      <p className="font-medium text-accent-foreground">
-                        AI Summary
-                      </p>
-                      <p className="text-accent-foreground/80">{summary}</p>
-                    </div>
-                  )}
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, tIndex) => (
                       <Badge key={tIndex} variant="outline">

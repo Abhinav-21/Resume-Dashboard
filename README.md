@@ -10,6 +10,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 - [Node.js](https://nodejs.org/) (version 20 or later recommended)
 - [npm](https://www.npmjs.com/) or another package manager like [yarn](https://yarnpkg.com/) or [pnpm](https://pnpm.io/)
+- [Ollama](https://ollama.com/) running locally or a cloud endpoint.
 
 ### Installation
 
@@ -25,9 +26,13 @@ Follow these instructions to get a copy of the project up and running on your lo
     ```
 
 3.  **Set up environment variables:**
-    Create a file named `.env` in the root of your project and add your Google AI API key. You can get a key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+    Create a file named `.env` in the root of your project and add your Ollama configuration.
+    For local Ollama, you can use `http://127.0.0.1:11434`. Make sure you have pulled a model like `llama3`.
+
+    Here's an example for a local setup:
     ```
-    GEMINI_API_KEY="YOUR_API_KEY_HERE"
+    OLLAMA_HOST="http://127.0.0.1:11434"
+    OLLAMA_MODEL="llama3"
     ```
 
 4.  **Run the development server:**
@@ -55,7 +60,7 @@ You can easily deploy this Next.js application using platforms like [Vercel](htt
 
 3.  **Configure Project Settings:**
     - The platform should automatically detect that you're deploying a Next.js project. The default build settings are usually correct.
-    - **Important:** Add your `GEMINI_API_KEY` as an environment variable in the project settings on your hosting provider's dashboard. Do not commit your `.env` file to GitHub.
+    - **Important:** Add your `OLLAMA_HOST` and `OLLAMA_MODEL` as environment variables in the project settings on your hosting provider's dashboard. Do not commit your `.env` file to GitHub.
 
 4.  **Deploy:**
     - Click the "Deploy" button. Your site will be built and deployed. You'll be given a public URL to view your live resume dashboard.

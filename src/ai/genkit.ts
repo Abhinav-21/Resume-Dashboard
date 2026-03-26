@@ -1,7 +1,16 @@
 import {genkit} from 'genkit';
-import {googleAI} from '@genkit-ai/googleai';
+import {config} from 'dotenv';
+import {ollama} from '@genkit-ai/ollama';
+
+config(); // Load environment variables from .env file
+
+const ollamaModel = process.env.OLLAMA_MODEL || 'llama3';
 
 export const ai = genkit({
-  plugins: [googleAI()],
-  model: 'googleai/gemini-1.5-flash-latest',
+  plugins: [
+    ollama({
+      host: process.env.OLLAMA_HOST,
+    }),
+  ],
+  model: `ollama/${ollamaModel}`,
 });

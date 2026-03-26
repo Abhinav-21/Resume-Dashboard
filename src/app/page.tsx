@@ -1,14 +1,11 @@
-
 import { resumeData } from '@/lib/resume-data';
 import { DashboardHeader } from '@/components/dashboard-header';
 import { EducationCard } from '@/components/education-card';
-import { CareerPathCard } from '@/components/career-path-card';
 import { SkillsCard } from '@/components/skills-card';
 import { ExperienceCard } from '@/components/experience-card';
 import { ProjectsCard } from '@/components/projects-card';
 import { AchievementsCard } from '@/components/achievements-card';
 import { AboutCard } from '@/components/about-card';
-import { RecruiterQnaCard } from '@/components/recruiter-qna-card';
 
 export default function Home() {
   return (
@@ -24,8 +21,6 @@ export default function Home() {
           <div className="space-y-6 lg:col-span-4 xl:col-span-3">
             <AboutCard summary={resumeData.summary} />
             <EducationCard education={resumeData.education} />
-            <CareerPathCard resumeContent={resumeData.fullText} />
-            <RecruiterQnaCard resumeContent={resumeData.fullText} />
           </div>
           <div className="space-y-6 lg:col-span-8 xl:col-span-9">
             <ExperienceCard experience={resumeData.experience} />
