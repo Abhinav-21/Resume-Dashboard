@@ -32,6 +32,17 @@ export const resumeData = {
   ],
   experience: [
     {
+      company: 'Innodata',
+      role: 'AI Data Annotator (Contract)',
+      duration: '2026 - Present',
+      location: 'Remote',
+      points: [
+        'Annotate and validate datasets used in machine learning training pipelines for AI applications.',
+        'Perform quality assurance checks to ensure labeling consistency and dataset reliability.',
+        'Identify edge cases and ambiguous samples to improve dataset quality and model performance.',
+      ],
+    },
+    {
       company: 'Shorthills AI',
       role: 'SDE Intern',
       duration: 'March 2025 - Ongoing',
@@ -46,6 +57,19 @@ export const resumeData = {
     },
   ],
   projects: [
+    {
+      title: 'File Management Automation Agent',
+      github: 'https://github.com/Abhinav-21/',
+      technologies: ['Python', 'Ollama', 'Qwen2.5', 'Automation', 'CLI'],
+      description: 'Python automation tool for intelligent file organization with rule-based classification and AI fallback.',
+      points: [
+        'Built a Python automation agent to organize files using rule-based classification with AI fallback.',
+        'Integrated a local LLM (Qwen2.5 via Ollama) to classify ambiguous files and interpret natural language commands.',
+        'Implemented a natural language terminal interface enabling users to execute filesystem operations using plain English commands.',
+        'Designed safe command execution through LLM-driven tool calling with command allow-listing.',
+        'Added duplicate detection, scheduled execution, and transactional undo for reliable automation.',
+      ],
+    },
     {
       title: 'Multimodal Learning for Hinglish Meme Classification',
       github:
@@ -227,8 +251,10 @@ Education:
 - S.K.D. Academy, Intermediate (2020-2021), 95.6%
 - S.K.D. Academy, Matriculation (2018-2019), 94.4%
 Experience:
+- Innodata, AI Data Annotator (Contract) (2026-Present): Annotate and validate datasets used in machine learning training pipelines for AI applications. Perform quality assurance checks to ensure labeling consistency and dataset reliability. Identify edge cases and ambiguous samples to improve dataset quality and model performance.
 - Shorthills AI, SDE Intern (March 2025 - Ongoing): Developed and tested an end-to-end OCR pipeline for document ingestion and data extraction using Tesseract, LangChain, and vector databases. Engineered a RAG pipeline for intelligent, context-aware Q&A over document collections. Wrote sanity and unit tests to validate OCR accuracy and backend API behavior. Utilized SQL for data validation and cleanup in post-OCR databases, fixing inconsistencies. Debugged frontend (React) and backend (Python/Node.js) components of an internal QA portal.
 Projects:
+- File Management Automation Agent: Python automation tool for intelligent file organization with rule-based classification and AI fallback. Built a Python automation agent to organize files using rule-based classification with AI fallback. Integrated a local LLM (Qwen2.5 via Ollama) to classify ambiguous files and interpret natural language commands. Implemented a natural language terminal interface enabling users to execute filesystem operations using plain English commands. Designed safe command execution through LLM-driven tool calling with command allow-listing. Added duplicate detection, scheduled execution, and transactional undo for reliable automation.
 - Multimodal Learning for Hinglish Meme Classification: This project focuses on classifying Internet Hinglish memes by leveraging both textual and visual information. The primary goal was to address sentiment analysis (positive, negative, neutral) and emotion classification (humor, sarcasm, etc.) as part of the Memotion 3.0 competition. The project addresses two primary tasks: Task A - Sentiment Analysis (classifying memes into positive, negative, or neutral categories) and Task B - Emotion Classification (identifying humor, sarcasm, offensiveness, and motivational content). The dataset is sourced from the Memotion 3.0 competition and includes 10,000 internet memes, with a subset featuring Hinglish. The project utilizes DistilBERTMulti for text analysis, VGG16 for image analysis and a Multimodal Model combining both to leverage both text and image features for classification. Utilized the Memotion 3.0 dataset of 10,000 memes, including Hinglish text and OCR-extracted content. Constructed a multimodal architecture combining DistilBERT-Multilingual for text analysis and a pre-trained VGG16 for image feature extraction. Fused text and image features to create a joint representation, enabling the model to learn from both modalities simultaneously. Achieved a competitive F1-weighted score of 78.82% in sentiment and emotion classification tasks. The multimodal approach significantly outperformed unimodal models, especially in classifying Humor (90.04% F1-score) and Motivational (95.62% F1-score) content.
 - Healthcare Record Management System: Developed a full-stack, web-based platform to securely manage healthcare records and provide data-driven public health insights. The system was designed with a focus on data integrity, patient privacy, and scalability, using modern web technologies to create a robust solution for healthcare data management. The platform aimed to solve the problem of fragmented and insecure health records by providing a centralized, secure, and analyzable repository for patient data. Built with a MERN stack (MongoDB, Express, React, Node.js) for a robust and scalable architecture. Implemented decentralized, secure document storage using IPFS via Web3.storage, with token-based access control for patient privacy. Designed a system allowing hospitals to upload patient records securely while restricting access to authorized personnel. Created a patient-level analytics dashboard using Python to visualize key health metrics like vaccination rates, chronic disease prevalence, and community BMI trends. The system successfully demonstrated a secure and efficient way to manage healthcare records, providing valuable insights for public health initiatives.
 - Handwritten Digit Recognition Model: Implemented and trained a fully-connected neural network from scratch to classify handwritten digits from the MNIST dataset. The project goal was to build a deep understanding of fundamental neural network components, including layers, activation functions, forward propagation, and backpropagation, without relying on high-level deep learning libraries for the core logic. The model was designed to serve as a foundational exercise in understanding the mechanics of neural networks. Constructed the network using only Python and NumPy to handle core matrix operations and computations. Implemented the ReLU activation function for hidden layers and a Softmax output layer for multi-class probability distribution. Engineered the backpropagation algorithm from scratch to calculate gradients and update network weights. Optimized the model using mini-batch gradient descent (GD) to efficiently train on the 60,000-image dataset. Achieved a 93% classification accuracy on the test set, demonstrating a solid implementation of core deep learning concepts.
